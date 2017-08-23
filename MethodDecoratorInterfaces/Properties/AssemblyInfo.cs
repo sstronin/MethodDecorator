@@ -2,8 +2,8 @@
 
 [assembly: AssemblyTitle("MethodDecoratorInterfaces")]
 [assembly: AssemblyDescription("Fody addin for AOP method decoration")]
-[assembly: AssemblyCompany("Alexey Suvorov")]
-[assembly: AssemblyProduct("MethodDecoratorEx.Fody")]
-[assembly: AssemblyCopyright("Copyright © Alexey Suvorov 2014")]
-[assembly: AssemblyVersion("0.9.0.6")]
-[assembly: AssemblyFileVersion("0.9.0.6")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("MethodDecorator.Fody")]
+[assembly: AssemblyCopyright("Copyright © Alexey Suvorov, Sergei Stronin 2014-2017")]
+[assembly: AssemblyVersion("0.9.1.0")]
+[assembly: AssemblyFileVersion("0.9.1.0")]

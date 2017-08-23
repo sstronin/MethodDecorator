@@ -2,8 +2,8 @@
 
 [assembly: AssemblyTitle("MethodDecorator.Fody")]
 [assembly: AssemblyDescription("Fody addin for AOP method decoration")]
-[assembly: AssemblyCompany("Matt Ellis")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("MethodDecorator.Fody")]
-[assembly: AssemblyCopyright("Copyright © Matt Ellis 2012")]
-[assembly: AssemblyVersion("0.9.0.6")]
-[assembly: AssemblyFileVersion("0.9.0.6")]
+[assembly: AssemblyCopyright("Copyright © Matt Ellis, Sergei Stronin 2012-2017")]
+[assembly: AssemblyVersion("0.9.1.0")]
+[assembly: AssemblyFileVersion("0.9.1.0")]
