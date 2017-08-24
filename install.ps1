@@ -52,6 +52,19 @@ function Update-FodyConfig($addinName, $project)
         Write-Host "Appending node"
         $newNode = $xml.CreateElement($addinName)
         $weavers.AppendChild($newNode)
+
+		if(-not $weavers.HasAttribute("VerifyAssembly"))
+		{
+	        Write-Host "Force assembly verification"
+			
+			$verifyAttr = $xml.CreateAttribute("VerifyAssembly")
+			$verifyAttr.Value = "true"
+			$weavers.Attributes.Append($verifyAttr)
+
+			$excludeArg = $xml.CreateAttribute("VerifyIgnoreCodes")
+			$excludeArg.Value = "0x80131869"
+			$weavers.Attributes.Append($excludeArg)
+		}
     }
 
     $xml.Save($fodyWeaversPath)
