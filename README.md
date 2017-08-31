@@ -76,4 +76,5 @@ namespace MethodDecorator.Fody.Interfaces
 
 ### Recent changes
 	
+	[0.9.1.6] Fixed some PEVerify unjust complains
 	[0.9.1.5] Copied MethodDecoratorInterfaces.dll into Lib folder - to be added into project references when installing the package	

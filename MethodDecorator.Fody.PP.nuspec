@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MethodDecorator.Fody.PP</id>
-    <version>0.9.1.5</version>
+    <version>0.9.1.6</version>
     <title>MethodDecorator.Fody.PP</title>
     <authors>Sergei Stronin</authors>
     <owners>Sergei Stronin</owners>
