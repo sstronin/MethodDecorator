@@ -66,10 +66,13 @@ function Fix-ReferencesCopyLocal($package, $project)
     {
         if ($asms -contains $reference.Name + ".dll")
         {
-            if($reference.CopyLocal -eq $true)
-            {
-                $reference.CopyLocal = $false;
-            }
+			if (-not $reference.Name -eq "MethodDecoratorInterfaces.dll")
+			{
+				if($reference.CopyLocal -eq $true)
+				{
+					$reference.CopyLocal = $false;
+				}
+			}
         }
     }
 }
