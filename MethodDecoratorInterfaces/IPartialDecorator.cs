@@ -32,15 +32,15 @@ namespace MethodDecorator.Fody.Interfaces
     {
         void OnException(Exception iException);
     }
-    interface IPartialDecoratorContinuation
+    public interface IPartialDecoratorContinuation
     {
         void OnTaskContinuation(Task task);
     }
-    interface IPartialDecoratorNeedBypass
+    public interface IPartialDecoratorNeedBypass
     {
         bool NeedBypass();
     }
-    interface IPartialAlterRetval
+    public interface IPartialAlterRetval
     {
         object AlterRetval(object iRetval);
     }
