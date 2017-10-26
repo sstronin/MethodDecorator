@@ -18,7 +18,6 @@ namespace MethodDecorator.Fody {
         public void Decorate(TypeDefinition type, MethodDefinition method, CustomAttribute attribute, bool explicitMatch)
         {
 
-
             method.Body.InitLocals = true;
             
             var methodBaseTypeRef = this._referenceFinder.GetTypeReference(typeof(MethodBase));
@@ -182,7 +181,12 @@ namespace MethodDecorator.Fody {
                 processor.InsertBefore(methodBodyFirstInstruction, bypassInstructions);
 
             if (callOnEntryInstructions != null)
+            {
                 processor.InsertBefore(methodBodyFirstInstruction, callOnEntryInstructions);
+
+                if (bypassInstructions != null)
+                    processor.InsertBefore(methodBodyFirstInstruction, bypassInstructions);
+            }
 
             if (methodBodyReturnInstructions != null)
             {
