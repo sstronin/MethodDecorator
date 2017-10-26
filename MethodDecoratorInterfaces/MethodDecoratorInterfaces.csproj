@@ -41,7 +41,6 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IInterruptableMethodDecorator.cs" />
     <Compile Include="IMethodDecorator.cs" />
     <Compile Include="IAspectMatchingRule.cs" />
     <Compile Include="IPartialDecorator.cs" />
