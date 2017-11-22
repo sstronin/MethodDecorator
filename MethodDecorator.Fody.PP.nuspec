@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MethodDecorator.Fody.PP</id>
+    <version>0.9.1.7</version>
+    <title>MethodDecorator.Fody.PP</title>
+    <authors>Sergei Stronin</authors>
+    <owners>Sergei Stronin</owners>
+    <projectUrl>https://github.com/sstronin/MethodDecorator</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Fody add-in to decorate arbitrary methods to run code before and after invocation. Fork of https://github.com/Fody/MethodDecorator. Aspect parameters, aspect priority, partial decoration, method execution bypass.</description>
+    <copyright>Copyright Sergei Stronin 2017</copyright>
+    <tags>ILWeaving Fody AOP</tags>
+    <iconUrl>https://raw.githubusercontent.com/sstronin/MethodDecorator/master/Icons/package_icon.png</iconUrl>
+    <dependencies>
+      <dependency id="Fody" version="2.1.2" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src=".\MethodDecorator.Fody\Bin\Release\MethodDecorator.Fody.dll" target="" />
+    <file src="MethodDecoratorInterfaces\bin\Release\MethodDecoratorInterfaces.dll" target="Lib\MethodDecoratorInterfaces.dll"/>
+    <file src="MethodDecoratorInterfaces\bin\Release\MethodDecoratorInterfaces.dll" target="MethodDecoratorInterfaces.dll"/>
+    <file src="install.ps1" target="Tools" />
+    <file src="uninstall.ps1" target="Tools" />
+    <file src="Fody_ToBeDeleted.txt" target="Content" />
+  </files>
+</package>

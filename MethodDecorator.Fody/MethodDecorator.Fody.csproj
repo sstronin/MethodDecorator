@@ -1,73 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3B17CFD4-10E7-42DB-88D6-A10680B0BFBE}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MethodDecorator.Fody</RootNamespace>
-    <AssemblyName>MethodDecorator.Fody</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Mono.Cecil, Version=0.10.0.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
-      <HintPath>..\packages\FodyCecil.2.1.2\lib\net40\Mono.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil.Mdb, Version=0.10.0.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
-      <HintPath>..\packages\FodyCecil.2.1.2\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil.Pdb, Version=0.10.0.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
-      <HintPath>..\packages\FodyCecil.2.1.2\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil.Rocks, Version=0.10.0.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
-      <HintPath>..\packages\FodyCecil.2.1.2\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="IlHelper.cs" />
-    <Compile Include="ILProcessorExtensions.cs" />
-    <Compile Include="MethodDecorator.cs" />
-    <Compile Include="ModuleWeaver.cs" />
-    <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="ReferenceFinder.cs" />
-    <Compile Include="TypeReferenceExtensions.cs" />
-    <Compile Include="WeavingException.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MethodDecoratorInterfaces\MethodDecoratorInterfaces.csproj">
-      <Project>{44088df4-081e-45f6-bede-fe33054e8cbd}</Project>
-      <Name>MethodDecoratorInterfaces</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>netstandard1.3;net452</TargetFrameworks>
+        <Product>MethodDecorator.Fody</Product>
+        <Description>Fody add-in to decorate arbitrary methods to run code before and after invocation. Fork of https://github.com/Fody/MethodDecorator. Aspect parameters, aspect priority, partial decoration, method execution bypass.</Description>
+        <Company />
+        <Copyright>Copyright Sergei Stronin 2017</Copyright>
+        <AssemblyVersion>0.9.1.7</AssemblyVersion>
+        <FileVersion>0.9.1.7</FileVersion>
+        <Version>0.9.1.7</Version>
+        <Authors>Sergei Stronin</Authors>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <PackageId>MethodDecorator.Fody.PP</PackageId>
+        <PackageProjectUrl>https://github.com/sstronin/MethodDecorator</PackageProjectUrl>
+        <PackageTags>ILWeaving Fody AOP</PackageTags>
+        <PackageIconUrl>https://raw.githubusercontent.com/sstronin/MethodDecorator/master/Icons/package_icon.png</PackageIconUrl>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="FodyCecil" Version="2.1.2" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\MethodDecoratorInterfaces\MethodDecoratorInterfaces.csproj" />
+    </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Reflection;
 
 using Mono.Cecil;
 
@@ -44,7 +45,7 @@ namespace MethodDecorator.Fody {
 
         public TypeReference GetTypeReference(Type type) {
 
-            if(type.Assembly.GetName().Name == "mscorlib") {
+            if(type.GetTypeInfo().Assembly.GetName().Name == "mscorlib") {
                 var typeReference = mscorlib.Types.FirstOrDefault(tr => tr.Namespace == type.Namespace && tr.Name == type.Name);
                 if(typeReference != null)
                 {
