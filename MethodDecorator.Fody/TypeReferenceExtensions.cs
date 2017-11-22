@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Reflection;
 
 using Mono.Cecil;
 
@@ -7,7 +8,7 @@ namespace MethodDecorator.Fody {
     public static class TypeReferenceExtensions {
 
         public static bool Implements(this TypeDefinition typeDefinition, System.Type type) {
-            if (type.IsInterface == false) {
+            if (type.GetTypeInfo().IsInterface == false) {
                 throw new InvalidOperationException("The <type> argument (" + type.Name + ") must be an Interface type.");
             }
 
