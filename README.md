@@ -130,6 +130,35 @@ MethodDecorator searches IntersectMethodsMarkedByAttribute by predicate StartsWi
 
 In case of exception in async method you "OnException" will not be called, OnTaskContinuation will be called instead.
 
+For use regex in method decorating you must implement `IAspectMatchingRule`.
+
+```
+public class LogMethodAttribute : Attribute, IAspectMatchingRule, IMethodDecorator
+{
+    public string AttributeTargetTypes { get; set; }
+    public bool AttributeExclude { get; set; }
+    public int AttributePriority { get; set; }
+    public int AspectPriority { get; set; }
+
+    public void Init(object instance, MethodBase method, object[] args)
+    {
+    }
+
+    public void OnEntry()
+    {
+    }
+
+    public void OnException(Exception exception)
+    {
+    }
+
+    public void OnExit()
+    {
+    }
+}
+```
+And then, on module you must use: `[module: LogMethod(AttributeTargetTypes = "SomeNamespace.*")]`
+
 
 ### Recent changes
 
